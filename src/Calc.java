@@ -41,11 +41,11 @@ public class Calc {
             String[] subStr = s.split("\\W");
             number1 = Integer.parseInt(subStr[0]);
             number2 = Integer.parseInt(subStr[1]);
-            if(number1 == 0 || number2 == 0){
+            if (number1 == 0 || number2 == 0 || number1 > 10 || number2 > 10) {
                 throw new IllegalArgumentException("Введены некоректные данные");
-            }else{
-            result = calculatedArabian(number1, number2, operation);
-            System.out.println(result);
+            } else {
+                result = calculatedArabian(number1, number2, operation);
+                System.out.println(result);
             }
 
         } else {
@@ -88,10 +88,3 @@ public class Calc {
     }
 
 }
-
-
-
-
-
-
-
