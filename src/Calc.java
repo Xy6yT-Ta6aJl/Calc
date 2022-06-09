@@ -34,8 +34,12 @@ public class Calc {
             RomeNumber rn2 = RomeNumber.valueOf(s2);
             number1 = rn1.getNum();
             number2 = rn2.getNum();
-            result = calculatedRoman(number1, number2, operation);
-            System.out.println(RomeNumber.values()[result - 1] + " " + "(" + result + ")");
+            if (number1 == 0 || number2 == 0 || number1 > 10 || number2 > 10) {
+                throw new IllegalArgumentException("Введены некоректные данные");
+            }else {
+                result = calculatedRoman(number1, number2, operation);
+                System.out.println(RomeNumber.values()[result - 1] + " " + "(" + result + ")");
+            }
         } else if (userInputNumber.matches(pattern2)) {
             String s = userInputNumber.replaceAll("\\s", "");
             String[] subStr = s.split("\\W");
